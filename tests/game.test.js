@@ -13,3 +13,10 @@ test("bullet creation", () => {
   bullets.addBullet(0, 0, 0);
   expect(bullets.bullets.length).toBe(1);
 });
+
+test("multiple bullets", () => {
+  const bullets = new Bullets(fakeCtx);
+  bullets.addBullet(0, 0, 0);
+  bullets.addBullet(1, 1, 0);
+  expect(bullets.bullets.length).toBe(2);
+});
