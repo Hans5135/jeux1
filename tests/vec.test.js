@@ -1,3 +1,5 @@
+const { Vec } = require("../main");
+
 test("Vec add", () => {
   const a = new Vec(1, 2);
   const b = new Vec(3, 4);
@@ -9,3 +11,5 @@ test("Vec dot", () => {
   const b = new Vec(2, 1);
   expect(a.dot(b)).toBe(4);
 });
+
+

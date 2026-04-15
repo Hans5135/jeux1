@@ -27,4 +27,5 @@ jobs:
         run: npx eslint .
 
       - name: Security audit
-        run: npm audit
+        run: npm audit      
+        

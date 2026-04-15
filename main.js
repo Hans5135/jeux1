@@ -52,7 +52,7 @@ let player = null;
 let bullets = null;
 let enemies = null;
 let gameStatus = null;
-let touchMode = 'ontouchstart' in document;
+let touchMode = typeof document !== "undefined" && 'ontouchstart' in document;
 
 function now() {
   return new Date().getTime();
@@ -804,7 +804,9 @@ function init() {
   requestAnimationFrame(update);
 }
 
-window.addEventListener('load', init);
+if (typeof window !== "undefined") {
+  window.addEventListener('load', init);
+}
 
 function resizeCanvas(canvas) {
   canvas.style.height = GAME_MAP.MAP_HEIGHT;
@@ -914,3 +916,8 @@ function touchMove(e) {
 function touchEnd() {
   player.updateTargetRadian(null);
 }
+
+  module.exports = {
+    Vec,
+    Bullets
+  };
