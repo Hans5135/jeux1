@@ -23,3 +23,8 @@ test("Vec cross", () => {
   const b = new Vec(3, 4);
   expect(a.cross(b)).toBe(-2);
 });
+
+test("Vec add invalid", () => {
+  const a = new Vec(1, 2);
+  expect(a.add(3)).toEqual({ x: NaN, y: NaN });
+});
